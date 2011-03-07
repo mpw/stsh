@@ -1,0 +1,5 @@
+#!/usr/local/bin/stsh
+#-<void>pdfsh:filename
+context loadFramework:'EGOS'.
+pdf := MPWPDFFile alloc initWithPdfData: (NSData dataWithContentsOfMappedFile:filename)
+shell runInteractiveLoop

@@ -1,0 +1,17 @@
+#!/usr/local/bin/stsh
+#-<void>pdfpagedump:filename page:<int>pageNo
+context loadFramework:'EGOS'.
+context loadFramework:'EGOS_Cocoa'.
+stdout println: filename
+
+data := NSData dataWithContentsOfFile: filename .
+pdf := (MPWPDFFile alloc initWithPdfData:data ) autorelease
+converter := TextConverter stream.
+pdf graphicsInterpreter setTarget:converter.
+pdf renderPageNo:pageNo.
+converter showpage:nil.
+#stdout do println:converter lines each.
+converter flushText.
+stdout println: converter target string.
+#converter writePlainTextOnStream:stdout.
+

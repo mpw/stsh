@@ -1,0 +1,14 @@
+#!/usr/local/bin/stsh
+#-<void>server:<int>port
+context loadFramework:'MPWHttpd'
+NSObject createSubclassWithName:'NewServer' instanceVariables:'response'
+NewServer generateAccessorsFor:'response'
+context  addScript:'self response'  forClass:'NewServer'  methodHeaderString:'get:url'
+server := MPWHTTPServer alloc init autorelease
+server setPort:port
+a := NewServer alloc init autorelease
+server setDelegate:a.
+a setResponse:'Hello Objective-Smalltalk'
+server startHttpd
+shell runInteractiveLoop
+

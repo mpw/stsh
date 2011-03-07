@@ -1,0 +1,50 @@
+{\rtf1\ansi\ansicpg1252\cocoartf917
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\b\fs24 \cf0 Notes
+\b0 \
+\
+\
+
+\b Log
+\b0 \
+\
+2006.9.9\
+- bug:  huge memory consumption\
+	- cause: interactive shell did not wrap each command around an autorelease pool\
+	- fix:  wrap each command in an autorelease pool\
+2007.2.19\
+- preliminary ability ability to have named internal commands interact\
+	- but still have to 'run' the result\
+		(ls | upcase) run\
+2007.7.24\
+- bug:  '(ls | upcase) run' works,  '((ls with:'/') | upcasefilter) run' does not\
+	- error is: [MPWUpcaseFilter configureProcessForRunningWithStdinput:stdoutput:] unrecognized selector\
+	- ls with:'/'     returns an MPWShellProcess (with argument '/' )\
+	- so the "pipe:" message is sent to the MPWShellProcess, otherwise it is sent to the command itself?\
+\
+	-> replaced 'pipe:' method in MPWShellProcess with (essentially) the one from MPWShellCommand\
+		(except with 'self' instead of 'self process' )\
+		-> changed the implementation in MPWShellCommand to just use that\
+		-> result:  commands with or without arguments now work consistently when piping into a built-in filter\
+			-> but:  piping into an external command now fails consistently:\
+				[MPWShellProcess adaptCommand:]: unrecognized selector\
+	-> returning either the commend or [command process]  [MPWShellProcess adaptCommand:]:\
+		results in inifinite recursion/stack overflow\
+	-> returning 
+\f1\fs20 \CocoaLigature0 [aCommand wrappedAsMPWStream] 
+\f0\fs24 \CocoaLigature1 works at least as well/badly as with built-in commands\
+		-> except that it's async, output gets written to stdout after the command prompt appears\
+\
+- bug:  have to run pipes \
+	( ls | wc ) run  instead of just 'ls | wc'  \
+	(due to fix above, this now works identically for both internal and external filters)\
+	fixed:  had evaluateInShell evaluate its input normally and then do a run(Process) on it if possible\
+\
+- bug: results of pipes with an external command as its last component are written to stdout instead of returned\
+	- causes a test failure where we expect to work with the result\
+	- and also causes output to appear asynchronously, with the prompt returning first\
+	- result of a single external command does become a return value, but a string instead of an array.\
+}

@@ -1,0 +1,16 @@
+#!/usr/local/bin/stsh
+#-<void>pdfpagedump:filename
+context loadFramework:'EGOS'.
+context loadFramework:'EGOS_Cocoa'.
+stdout println: filename
+
+data := NSData dataWithContentsOfFile: filename .
+converter := TextConverter stream.
+interpreter := MPWPSInterpreterWithGraphics streamWithTarget:converter.
+interpreter interpret:data.
+converter showpage:nil.
+stdout do println:converter lines each.
+#converter flushText.
+#stdout println: converter target string.
+#converter writePlainTextOnStream:stdout.
+

@@ -1,0 +1,7 @@
+#!/usr/bin/env stsh
+NSBundle loadFramework:'MPWPDFInterpreter'.
+filenames := args.
+writer := MPWPDFWriter streamWithTarget:(MPWPDFByteStream streamWithTarget:stdout).
+files := (MPWPDFFile collect pdfFileWithContentsOfMappedFile:(filenames each)).
+writer do outputPDFFile:files each.
+writer close.

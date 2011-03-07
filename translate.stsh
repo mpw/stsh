@@ -1,0 +1,7 @@
+#!/usr/local/bin/stsh
+#-<void>translate:filename
+stdout println:filename.
+isodata := NSData dataWithContentsOfFile:filename.
+isostring := NSString alloc initWithData:isodata encoding:9
+utf16data := isostring dataUsingEncoding:10
+utf16data writeToFile:filename atomically:1.
