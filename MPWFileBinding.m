@@ -38,7 +38,17 @@ idAccessor( url , setUrl )
 
 -_valueWithURL:(NSURL*)aURL
 {
-	return [NSData dataWithContentsOfURL:aURL];
+	NSFileManager *manager=[NSFileManager defaultManager];
+	NSString *path=[aURL path];
+	BOOL isDirectory=NO;
+	if (  [manager fileExistsAtPath:path isDirectory:&isDirectory]) {
+		if ( isDirectory ) {
+			return [manager contentsOfDirectoryAtPath:path error:nil];
+		} else {
+			return [NSData dataWithContentsOfURL:aURL];
+		}
+	}
+	return nil;
 }
 
 -_value
