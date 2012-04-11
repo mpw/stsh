@@ -25,18 +25,6 @@
 }
 
 
--createSchemes
-{
-	id schemes=[super createSchemes];
-	id httpResolver=[[[MPWURLSchemeResolver alloc] init] autorelease];
-	[[schemes schemes] setObject:[[[MPWFileSchemeResolver alloc] init] autorelease] forKey:@"file"];
-	[[schemes schemes] setObject:httpResolver forKey:@"http"];
-	[[schemes schemes] setObject:httpResolver forKey:@"ftp"];
-	[[schemes schemes] setObject:[[[MPWEnvScheme alloc] init] autorelease] forKey:@"env"];
-	return schemes;
-}
-
-
 
 
 +externalCommandNames
