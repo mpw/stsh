@@ -83,7 +83,21 @@ idAccessor( script, setScript )
 			}
 		}
 		[[executionContext evaluator] bindValue:[[args copy] autorelease] toVariableNamed:@"args"];
-	}
+    } else {
+        int missingCount=[methodHeader numArguments] - [args count];
+        NSMutableString *missingMsg;
+        missingMsg=[NSMutableString stringWithFormat:@"<script> %d missing parameters (of %d): ",missingCount,[methodHeader numArguments]];
+        for (int i=0;i<[methodHeader numArguments];i++) {
+            NSString *paramName=[methodHeader argumentNameAtIndex:i];
+            if ( i< [args count] ) {
+                [missingMsg appendFormat:@"%@ = %@ ",paramName,[args objectAtIndex:i]];
+            } else {
+                [missingMsg appendFormat:@"%@ = <missing> ",paramName];
+            }
+        }
+        
+        [NSException raise:@"missingargument" format:missingMsg];
+    }
 }
 
 -(void)executeInContext:executionContext
