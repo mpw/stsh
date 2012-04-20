@@ -77,7 +77,13 @@ idAccessor( script, setScript )
 			if ( ![argName isEqual:@"args"] ) {
 				if ( [argType isEqual:@"int"] ) {
 					arg=[NSNumber numberWithInt:[arg intValue]];
-				}
+				} else if ([argType isEqual:@"ref"] ) {
+                    NSString *strarg=arg;
+                    if ( [strarg rangeOfString:@":"].length<= 0 ) {
+                        strarg=[@"file:" stringByAppendingString:strarg];
+                    }
+                    arg=[[executionContext evaluator] bindingForString:strarg];
+                }
 				[[executionContext evaluator] bindValue:arg toVariableNamed:argName];
 				[args removeObjectAtIndex:0];
 			}
@@ -130,3 +136,5 @@ idAccessor( script, setScript )
 
 
 @end
+
+
