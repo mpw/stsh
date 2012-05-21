@@ -160,8 +160,11 @@ idAccessor( retval, setRetval )
 			id pool=[NSAutoreleasePool new];
 			NS_DURING
 				id exprString = [NSString stringWithCString:lineOfInput];
+            if ( [exprString hasPrefix:@"!"]) {
+                system(lineOfInput+1);
+            } else {
 				id expr = [[self evaluator] compile:exprString];
-//				NSLog(@"expr: %@",expr);
+                //				NSLog(@"expr: %@",expr);
 				BOOL isAssignment = [self isAssignmentExpresson:expr];
 				
 				if ( [[self evaluator] respondsToSelector:@selector(executeShellExpression:)] )  {
@@ -169,24 +172,25 @@ idAccessor( retval, setRetval )
 				} else {
 					result = [[self evaluator] evaluate:expr];
 				}
-//				NSLog(@"result: %@/%@",[result class],result);
+                //				NSLog(@"result: %@/%@",[result class],result);
 				if ( result!=nil && [result isNotNil]) {
 					[[self evaluator] bindValue:result toVariableNamed:@"last" withScheme:@"var"];
                     if ( [self echo] && !isAssignment ) {
- //                       str_result = [[result description] cString];
- //                       str_result = str_result ? str_result : "nil";
+                        //                       str_result = [[result description] cString];
+                        //                       str_result = str_result ? str_result : "nil";
 						if ( !result ) {
 							result=@"nil";
 						}
                         fflush(stdout);
 						[[[MPWByteStream Stderr] do] println:[result each]];
-//                       fprintf(stderr,"%s\n",str_result);
+                        //                       fprintf(stderr,"%s\n",str_result);
                         fflush(stderr);
                     }
 				}
-                NS_HANDLER
-                    NSLog(@"exception: %@",localException);
-                NS_ENDHANDLER
+            }
+            NS_HANDLER
+            NSLog(@"exception: %@",localException);
+            NS_ENDHANDLER
 			[pool release];
 		}
             save=malloc( strlen( lineOfInput) +2 );
