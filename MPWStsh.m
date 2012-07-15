@@ -159,9 +159,26 @@ idAccessor( retval, setRetval )
  		if ( (lineOfInput[0]!='#') || (lineOfInput[1]=='(') ) {
 			id pool=[NSAutoreleasePool new];
 			NS_DURING
-				id exprString = [NSString stringWithCString:lineOfInput];
+				id exprString = [NSString stringWithUTF8String:lineOfInput];
             if ( [exprString hasPrefix:@"!"]) {
-                system(lineOfInput+1);
+                if ( [exprString hasPrefix:@"!cd"] ) {
+                    NSArray *components = [exprString componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+                    NSString *last=nil;
+                    int index=[components count]-1;
+                    while (index>0 && [last length]==0) {
+                        last=[components objectAtIndex:index];
+                        index--;
+                    }
+                    const char *newDir = [last fileSystemRepresentation];
+                   if ( newDir) {
+                       int failure = chdir(newDir);
+                       if ( failure ) {
+                           perror("failed to chdir");
+                       }
+                    }
+                } else {
+                    system(lineOfInput+1);
+                }
             } else {
 				id expr = [[self evaluator] compile:exprString];
                 //				NSLog(@"expr: %@",expr);
@@ -213,7 +230,7 @@ idAccessor( retval, setRetval )
 {
     NSObject* result = [self evaluateIn:aShell];
 //	NSLog(@"result of initial eval: %s, may no run process",object_getClassName(result));
-	if ( NO && [result isKindOfClass:[NSObject class]] && [result respondsToSelector:@selector(runProcess)] ) {
+	if ( [result isKindOfClass:[NSObject class]] && [result respondsToSelector:@selector(runProcess)] ) {
 		result = [result runProcess];
 	}
 	return result;
