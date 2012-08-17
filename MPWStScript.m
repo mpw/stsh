@@ -7,7 +7,7 @@
 //
 
 #import "MPWStScript.h"
-#import <MPWTalk/MPWMethodHeader.h>
+#import <ObjectiveSmalltalk/MPWMethodHeader.h>
 #import "MPWStsh.h"
 #import "MPWShellCompiler.h"
 

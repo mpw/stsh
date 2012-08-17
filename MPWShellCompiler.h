@@ -6,7 +6,7 @@
 //  Copyright 2006 __MyCompanyName__. All rights reserved.
 //
 
-#import <MPWTalk/MPWStCompiler.h>
+#import <ObjectiveSmalltalk/MPWStCompiler.h>
 
 
 @interface MPWShellCompiler : MPWStCompiler {

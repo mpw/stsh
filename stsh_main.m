@@ -1,6 +1,6 @@
 
 #import <MPWFoundation/MPWFoundation.h>
-#import <MPWShellScriptKit/MPWStsh.h>
+#import <Stsh/MPWStsh.h>
 
 
 int main (int argc, const char *argv[])

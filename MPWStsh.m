@@ -8,7 +8,7 @@
 
 #import "MPWStsh.h"
 #import <histedit.h>
-#import <MPWTalk/MPWIdentifierExpression.h>
+#import <ObjectiveSmalltalk/MPWIdentifierExpression.h>
 #import "MPWShellCompiler.h"
 #import "MPWStScript.h"
 
@@ -199,14 +199,24 @@ idAccessor( retval, setRetval )
 							result=@"nil";
 						}
                         fflush(stdout);
-						[[[MPWByteStream Stderr] do] println:[result each]];
+//						[[[MPWByteStream Stderr] do] println:[result each]];
+						[[MPWByteStream Stdout] println:result];
+
+                        
                         //                       fprintf(stderr,"%s\n",str_result);
                         fflush(stderr);
                     }
 				}
             }
             NS_HANDLER
-            NSLog(@"exception: %@",localException);
+
+            NSLog(@"top level exception: %@",localException);
+            id combinedStack=[localException combinedStackTrace];
+            if ( combinedStack) {
+                NSLog(@"%@",combinedStack);
+            } else {
+                NSLog(@"no stack");
+            }
             NS_ENDHANDLER
 			[pool release];
 		}

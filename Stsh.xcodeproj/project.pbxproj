@@ -26,7 +26,6 @@
 		1F4A0A670BF2B78400078997 /* libncurses.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC70B2509890E76008ED847 /* libncurses.5.4.dylib */; };
 		1F4B921F0D4D362000EA8493 /* stsh_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F4B921E0D4D362000EA8493 /* stsh_main.m */; };
 		1F4B922D0D4D364E00EA8493 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4B922C0D4D364E00EA8493 /* ScriptingBridge.framework */; };
-		1F4B922F0D4D365C00EA8493 /* MPWShellScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4B922E0D4D365C00EA8493 /* MPWShellScriptKit.framework */; };
 		1F4B92330D4D366700EA8493 /* libncurses.5.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4B92320D4D366700EA8493 /* libncurses.5.4.dylib */; };
 		1F4B92350D4D366E00EA8493 /* libedit.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F4B92340D4D366E00EA8493 /* libedit.2.dylib */; };
 		1F4D85F70DFB941D0014C04B /* testfile.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F4D85F60DFB941D0014C04B /* testfile.txt */; };
@@ -34,13 +33,14 @@
 		1F692A670C1CDE1700678830 /* MPWStScript.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F692A650C1CDE1700678830 /* MPWStScript.h */; };
 		1F692A680C1CDE1700678830 /* MPWStScript.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F692A660C1CDE1700678830 /* MPWStScript.m */; };
 		1F77B23009476D09005A1B70 /* MPWShellProcess.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F77B22E09476D09005A1B70 /* MPWShellProcess.h */; };
+		1F83B76C15DD327800D61261 /* ObjectiveSmalltalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F83B76B15DD327800D61261 /* ObjectiveSmalltalk.framework */; };
 		1F9454C60B78E06400AAC230 /* MPWExternalCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9454C40B78E06400AAC230 /* MPWExternalCommand.h */; };
 		1F9977BA0AD3B5F300CB06B4 /* MPWShellCompiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9977B80AD3B5F300CB06B4 /* MPWShellCompiler.h */; };
 		1F9A717009BC86B800B5319F /* MPWCommandFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F9A716E09BC86B800B5319F /* MPWCommandFilter.h */; };
-		1FC70B2B09890E97008ED847 /* MPWTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FC70B2A09890E97008ED847 /* MPWTalk.framework */; };
 		1FDE1AD40B746304006934C4 /* MPWUpcaseFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FDE1AD20B746304006934C4 /* MPWUpcaseFilter.h */; };
 		1FE7B3D30AB35F4A00475AFD /* Notes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1FE7B3D20AB35F4A00475AFD /* Notes.rtf */; };
 		1FEB58F90B7875D2002891F6 /* MPWEchoCommand.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FEB58F70B7875D2002891F6 /* MPWEchoCommand.h */; };
+		1FF04F8215DE1226003A9B4A /* Stsh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Stsh.framework */; };
 		1FF8333409597932003E9E0D /* MPWFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF8333309597932003E9E0D /* MPWFoundation.framework */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
@@ -76,6 +76,7 @@
 		1F692A660C1CDE1700678830 /* MPWStScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPWStScript.m; sourceTree = "<group>"; };
 		1F77B22E09476D09005A1B70 /* MPWShellProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWShellProcess.h; sourceTree = "<group>"; };
 		1F77B22F09476D09005A1B70 /* MPWShellProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPWShellProcess.m; sourceTree = "<group>"; };
+		1F83B76B15DD327800D61261 /* ObjectiveSmalltalk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveSmalltalk.framework; path = "../../../Library/Developer/Xcode/DerivedData/metaproducts-frbgyznjeqtcxocedsnxdniqbnzz/Build/Products/Release/ObjectiveSmalltalk.framework"; sourceTree = "<group>"; };
 		1F9454C40B78E06400AAC230 /* MPWExternalCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWExternalCommand.h; sourceTree = "<group>"; };
 		1F9454C50B78E06400AAC230 /* MPWExternalCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPWExternalCommand.m; sourceTree = "<group>"; };
 		1F9977B80AD3B5F300CB06B4 /* MPWShellCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWShellCompiler.h; sourceTree = "<group>"; };
@@ -93,9 +94,9 @@
 		1FEB58F70B7875D2002891F6 /* MPWEchoCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWEchoCommand.h; sourceTree = "<group>"; };
 		1FEB58F80B7875D2002891F6 /* MPWEchoCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPWEchoCommand.m; sourceTree = "<group>"; };
 		1FF8333309597932003E9E0D /* MPWFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MPWFoundation.framework; path = ../MPWFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		32DBCF5E0370ADEE00C91783 /* MPWShellScriptKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPWShellScriptKit_Prefix.pch; sourceTree = "<group>"; };
+		32DBCF5E0370ADEE00C91783 /* Stsh_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stsh_Prefix.pch; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		8DC2EF5B0486A6940098B216 /* MPWShellScriptKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPWShellScriptKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DC2EF5B0486A6940098B216 /* Stsh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stsh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF04F8215DE1226003A9B4A /* Stsh.framework in Frameworks */,
 				1F4B922D0D4D364E00EA8493 /* ScriptingBridge.framework in Frameworks */,
-				1F4B922F0D4D365C00EA8493 /* MPWShellScriptKit.framework in Frameworks */,
 				1F4B92330D4D366700EA8493 /* libncurses.5.4.dylib in Frameworks */,
 				1F4B92350D4D366E00EA8493 /* libedit.2.dylib in Frameworks */,
 			);
@@ -114,8 +115,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F83B76C15DD327800D61261 /* ObjectiveSmalltalk.framework in Frameworks */,
 				1FF8333409597932003E9E0D /* MPWFoundation.framework in Frameworks */,
-				1FC70B2B09890E97008ED847 /* MPWTalk.framework in Frameworks */,
 				1F232D0C0BF2B5AD002823A2 /* Foundation.framework in Frameworks */,
 				1F4A0A660BF2B78300078997 /* libedit.2.dylib in Frameworks */,
 				1F4A0A670BF2B78400078997 /* libncurses.5.4.dylib in Frameworks */,
@@ -128,7 +129,7 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8DC2EF5B0486A6940098B216 /* MPWShellScriptKit.framework */,
+				8DC2EF5B0486A6940098B216 /* Stsh.framework */,
 				1F4B921A0D4D360300EA8493 /* stsh */,
 			);
 			name = Products;
@@ -150,6 +151,7 @@
 		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1F83B76B15DD327800D61261 /* ObjectiveSmalltalk.framework */,
 				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
 				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
 			);
@@ -231,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				1F4B921E0D4D362000EA8493 /* stsh_main.m */,
-				32DBCF5E0370ADEE00C91783 /* MPWShellScriptKit_Prefix.pch */,
+				32DBCF5E0370ADEE00C91783 /* Stsh_Prefix.pch */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -277,9 +279,9 @@
 			productReference = 1F4B921A0D4D360300EA8493 /* stsh */;
 			productType = "com.apple.product-type.tool";
 		};
-		8DC2EF4F0486A6940098B216 /* MPWShellScriptKit */ = {
+		8DC2EF4F0486A6940098B216 /* Stsh */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "MPWShellScriptKit" */;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Stsh" */;
 			buildPhases = (
 				8DC2EF500486A6940098B216 /* Headers */,
 				8DC2EF520486A6940098B216 /* Resources */,
@@ -291,10 +293,10 @@
 			);
 			dependencies = (
 			);
-			name = MPWShellScriptKit;
+			name = Stsh;
 			productInstallPath = "$(HOME)/Library/Frameworks";
 			productName = MPWShellScriptKit;
-			productReference = 8DC2EF5B0486A6940098B216 /* MPWShellScriptKit.framework */;
+			productReference = 8DC2EF5B0486A6940098B216 /* Stsh.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -302,7 +304,7 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "MPWShellScriptKit" */;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Stsh" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -317,7 +319,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8DC2EF4F0486A6940098B216 /* MPWShellScriptKit */,
+				8DC2EF4F0486A6940098B216 /* Stsh */,
 				1F4B92190D4D360300EA8493 /* stsh */,
 			);
 		};
@@ -385,7 +387,7 @@
 /* Begin PBXTargetDependency section */
 		1F4B92390D4D36AA00EA8493 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8DC2EF4F0486A6940098B216 /* MPWShellScriptKit */;
+			target = 8DC2EF4F0486A6940098B216 /* Stsh */;
 			targetProxy = 1F4B92380D4D36AA00EA8493 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -411,18 +413,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/../../Build",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/metaproducts-frbgyznjeqtcxocedsnxdniqbnzz/Build/Products/Release\"";
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MPWShellScriptKit_Prefix.pch;
+				GCC_PREFIX_HEADER = Stsh_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "@executable_path/../Frameworks/";
 				OTHER_LDFLAGS = "";
-				PRODUCT_NAME = MPWShellScriptKit;
+				PRODUCT_NAME = Stsh;
 				WRAPPER_EXTENSION = framework;
 				ZERO_LINK = YES;
 			};
@@ -436,15 +440,17 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(FRAMEWORK_SEARCH_PATHS)",
 					"$(SRCROOT)/../../Build",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/metaproducts-frbgyznjeqtcxocedsnxdniqbnzz/Build/Products/Release\"";
 				FRAMEWORK_VERSION = A;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = MPWShellScriptKit_Prefix.pch;
+				GCC_PREFIX_HEADER = Stsh_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Library/Frameworks";
-				PRODUCT_NAME = MPWShellScriptKit;
+				PRODUCT_NAME = Stsh;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -535,7 +541,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "MPWShellScriptKit" */ = {
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Stsh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91AE08733DA50010E9CD /* Debug */,
@@ -544,7 +550,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "MPWShellScriptKit" */ = {
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Stsh" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB91B208733DA50010E9CD /* Debug */,
