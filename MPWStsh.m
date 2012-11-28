@@ -200,7 +200,8 @@ idAccessor( retval, setRetval )
 						}
                         fflush(stdout);
 //						[[[MPWByteStream Stderr] do] println:[result each]];
-						[[MPWByteStream Stdout] println:result];
+//                        NSLog(@"result: %@/%@",[result class],result);
+						[[MPWByteStream Stdout] println:[result description]];
 
                         
                         //                       fprintf(stderr,"%s\n",str_result);
